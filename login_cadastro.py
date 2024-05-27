@@ -13,6 +13,17 @@ from functools import partial
 from kivy.uix.modalview import ModalView
 from kivy.lang import Builder
 import os
+from kivy.uix.label import Label
+from kivy.lang import Builder
+
+Builder.load_string('''
+<SeuWidget>:
+    font_name: '/Users/aluno.sesipaulista/Desktop/IncluSOS/Oswald/Oswald-VariableFont_wght.ttf'
+''')
+
+class SeuWidget(Label):
+    pass
+
 
 mydb = connect()
 

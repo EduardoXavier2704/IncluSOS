@@ -1,5 +1,8 @@
 #:import get_color_from_hex kivy.utils.get_color_from_hex
 
+<SeuWidget>
+    font_name: '/Users/aluno.sesipaulista/Desktop/IncluSOS/Oswald/Oswald-VariableFont_wght.ttf'
+
 <TelaPrincipal>
     orientation: "vertical"
 
@@ -29,42 +32,50 @@
     FloatLayout:
 
         Image:
-            source: '/Users/aluno.sesipaulista/Desktop/IncluSOS/images/logo.png'
+            source: '/Users/aluno.sesipaulista/Desktop/IncluSOS/images/login2.jpg'
             size_hint: None, None
-            size: 745, 150
-            pos_hint: {'center_x': 0.5, 'center_y': 0.82}
+            size: 50000, 4000
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+
+
+        Image:
+            source: '/Users/aluno.sesipaulista/Desktop/IncluSOS/images/logobranca.png'
+            size_hint: None, None
+            size: 745, 175
+            pos_hint: {'center_x': 0.48, 'center_y': 0.82}
 
         Label:
-            text: 'LOGIN DE CADASTRO'
+            text: 'LOGIN'
             font_size: 30
-            font_name: 'Georgia'
+            font_name: '/Users/aluno.sesipaulista/Desktop/IncluSOS/Oswald/Oswald-VariableFont_wght.ttf'
             color: (0.69, 0.52, 0.58, 1)
             size_hint: None, None
             size: self.texture_size[0], self.texture_size[1]
             pos_hint: {'center_x': 0.502, 'top': 0.732}
 
         Label:
-            text: "LOGIN DE CADASTRO"
+            text: "LOGIN"
             font_size: 30
-            font_name: 'Georgia'
+            font_name: '/Users/aluno.sesipaulista/Desktop/IncluSOS/Oswald/Oswald-VariableFont_wght.ttf'
             color: get_color_from_hex('#610C27')
             size_hint: None, None
             size: self.texture_size[0], self.texture_size[1]
             pos_hint: {'center_x': 0.5, 'top': 0.73}
 
         Label:
-            text: "Nome de usuário:"
+            text: "Nome:"
             font_name: 'Arial'
             color: get_color_from_hex('#AC9C8D')
             font_size: 18
             size_hint: None, None
             size: self.texture_size[0], self.texture_size[1]
-            pos_hint: {'center_x': 0.5, 'top': 0.66}
+            pos_hint: {'center_x': 0.5, 'top': 0.64}
+
         TextInput:
             id: username_input
             hint_text: "Nome de usuário ..."
             size_hint: None, None
-            size: 550, 35
+            size: 350, 35
             pos_hint: {'center_x': 0.5, 'center_y': 0.56}
             background_color: (1, 0, 0, 0.5) if root.invalid_login else (1, 1, 1, 1)
 
@@ -82,27 +93,30 @@
             hint_text: "Digite sua senha ..."
             password: True
             size_hint: None, None
-            size: 550, 35
+            size: 350, 35
             pos_hint: {'center_x': 0.5, 'top': 0.44}
             background_color: (1, 0, 0, 0.5) if root.invalid_senha else (1, 1, 1, 1)
 
         Button:
             id: cadastrar_button
             text: "Entrar"
+            font_name: '/Users/aluno.sesipaulista/Desktop/IncluSOS/Oswald/Oswald-VariableFont_wght.ttf'
             background_color: (0.380, 0.047, 0.153, 1)
             size_hint: None, None
-            size: 550, 35
+            size: 200, 35
             pos_hint: {'center_x': 0.5, 'top': 0.34}
-            
+            border_radius: 15  # Add this line to set the border radius
+
         Button:
             id: login_button
-            text: "Não possui uma conta? Cadastre-se"
+            text: "Cadastro"
+            font_name: '/Users/aluno.sesipaulista/Desktop/IncluSOS/Oswald/Oswald-VariableFont_wght.ttf'
             background_color: (0.675, 0.612, 0.553, 1)
             size_hint: None, None
-            size: 550, 35
+            size: 200, 35
             pos_hint: {'center_x': 0.5, 'top': 0.27}
+            border_radius: 15  # Add this line to set the border radius
 
-        
         Label:
             text: "Esqueceu a senha?"
             font_name: 'Arial'
@@ -118,6 +132,11 @@
     spacing: 10
 
     FloatLayout:
+        Image:
+            source: '/Users/aluno.sesipaulista/Desktop/IncluSOS/images/cadastro.jpeg'
+            size_hint: None, None
+            size: 50000, 4000
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
 
         Button:
             id: botao_login
@@ -135,11 +154,11 @@
         Label:
             text: 'Tela Cadastro'
             font_size: 40
-            font_name: 'Georgia'
+            font_name: '/Users/aluno.sesipaulista/Desktop/IncluSOS/Oswald/Oswald-VariableFont_wght.ttf'
             color: get_color_from_hex('#610C27')
             size_hint: None, None
             size: self.texture_size[0], self.texture_size[1]
-            pos_hint: {'center_x': 0.5, 'top': 0.88}
+            pos_hint: {'center_x': 0.5, 'top': 0.86}
 
         Label:
             text: "Nome de usuário:"
@@ -154,7 +173,7 @@
             id: username_input
             hint_text: "Nome de usuário ..."
             size_hint: None, None
-            size: 550, 35
+            size: 350, 35
             pos_hint: {'center_x': 0.5, 'center_y': 0.66}
 
         Label:
@@ -170,7 +189,7 @@
             id: email_input
             hint_text: "Digite seu email ..."
             size_hint: None, None
-            size: 550, 35
+            size: 350, 35
             pos_hint: {'center_x': 0.5, 'center_y': 0.5}
 
         Label:
@@ -186,7 +205,7 @@
             id: celular_input
             hint_text: "Digite o número do seu celular ..."
             size_hint: None, None
-            size: 550, 35
+            size: 350, 35
             pos_hint: {'center_x': 0.5, 'center_y': 0.34}
 
         Label:
@@ -202,7 +221,7 @@
             hint_text: "Digite sua senha ..."
             password: True
             size_hint: None, None
-            size: 550, 35
+            size: 350, 35
             pos_hint: {'center_x': 0.5, 'center_y': 0.18}
 
         Button:
@@ -210,7 +229,7 @@
             text: 'Cadastrar'
             background_color: (0.380, 0.047, 0.153, 1)
             size_hint: None, None
-            size: 550, 35
+            size: 200, 35
             pos_hint: {'center_x': 0.5, 'top': 0.12}
 
 <TelaInicial>
