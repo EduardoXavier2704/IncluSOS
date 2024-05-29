@@ -15,6 +15,10 @@ from kivy.lang import Builder
 import os
 from kivy.uix.label import Label
 from kivy.lang import Builder
+from kivy.core.window import Window
+
+Window.size = (410,890)
+
 
 Builder.load_string('''
 <SeuWidget>:
