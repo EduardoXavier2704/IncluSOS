@@ -17,7 +17,7 @@ from kivy.uix.label import Label
 from kivy.lang import Builder
 from kivy.core.window import Window
 
-Window.size = (410,890)
+Window.size = (300,600)
 
 
 Builder.load_string('''
@@ -428,6 +428,5 @@ if __name__ == '__main__':
 
 
 mydb.close()
-
 
 
