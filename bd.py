@@ -55,8 +55,6 @@ def delete(mydb, titulo):
 
     mycursor.close()
 
-
-
 def query(mydb):
     mycursor = mydb.cursor()
 
@@ -65,8 +63,8 @@ def query(mydb):
 
     rows = mycursor.fetchall()
 
-    # Cria uma lista vazia para armazenar os dados
-    dados = []
+    # Cria uma lista vazia para armazenar os dados formatados
+    dados_formatados = []
 
     # Itera sobre cada linha retornada pela consulta e adiciona os dados formatados à lista
     for row in rows:
@@ -81,19 +79,11 @@ def query(mydb):
         descricao = row[7] if row[7] else ""
 
         # Adiciona os dados formatados à lista
-        dados.append({
-            "Tipo_Ocorrencia": tipo_ocorrencia,
-            "Nome": nome,
-            "CPF": cpf,
-            "Data de Nascimento": data_nasc,
-            "Email ou Telefone": email_ou_telefone,
-            "Endereço": endereco,
-            "Lugar de Referência": lugar_referencia,
-            "Descrição": descricao
-        })
+        dados_formatados.append("Tipo de Ocorrência: {}\nNome: {}\nCPF: {}\nData de Nascimento: {}\nEmail ou Telefone: {}\nEndereço: {}\nLugar de Referência: {}\nDescrição: {}".format(
+            tipo_ocorrencia, nome, cpf, data_nasc, email_ou_telefone, endereco, lugar_referencia, descricao))
 
-    # Retorna a lista de dados
-    return dados
+    # Retorna a lista de dados formatados
+    return dados_formatados
 
 def lista(mydb):
     mycursor = mydb.cursor()
@@ -103,8 +93,8 @@ def lista(mydb):
 
     rows = mycursor.fetchall()
 
-    # Cria uma lista vazia para armazenar os dados
-    dados = []
+    # Cria uma lista vazia para armazenar os dados formatados
+    dados_formatados = []
 
     # Itera sobre cada linha retornada pela consulta e adiciona os dados formatados à lista
     for row in rows:
@@ -119,19 +109,12 @@ def lista(mydb):
         Descricao = row[7] if row[7] else ""
 
         # Adiciona os dados formatados à lista
-        dados.append({
-            "Tipo_Ocorrencia": Tipo_ocorrencia_proximo,
-            "Nome": Nome_completo_proximo,
-            "CPF": Cpf_proximo,
-            "Data de Nascimento": Data_nasc_proximo,
-            "Email ou Telefone": Email_ou_telefone_proximo,
-            "Endereço": Endereco_proximo,
-            "Lugar de Referência": Local_referencia,
-            "Descrição": Descricao
-        })
+        dados_formatados.append("Nome: {}\nCPF: {}\nData de Nascimento: {}\nEmail ou Telefone: {}\nEndereço: {}\nLugar de Referência: {}\nDescrição: {}".format(
+            Nome_completo_proximo, Cpf_proximo, Data_nasc_proximo, Email_ou_telefone_proximo, Endereco_proximo, Local_referencia, Descricao))
 
-    # Retorna a lista de dados
-    return dados
+    # Retorna a lista de dados formatados
+    return dados_formatados
+
 
 def register(mydb, nome, email, celular, senha):
     mycursor = mydb.cursor()

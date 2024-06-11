@@ -16,6 +16,7 @@ import os
 from kivy.uix.label import Label
 from kivy.lang import Builder
 from kivy.core.window import Window
+from kivy.graphics import Color, Rectangle
 
 Window.size = (300,600)
 
@@ -341,7 +342,7 @@ class ListaDenunciaAssalto(FloatLayout):
 
         # Adicionar cada item da lista
         for dado in dados:
-            label = Label(text=str(dado), font_size= 12, font_name= 'Arial', size_hint=(None, None), size=(self.width, 60))
+            label = Label(text=str(dado), font_size= 12, font_name= 'Arial',color=(0,0,0,1), size_hint=(None, None), size=(self.width, 60))
             label.pos_hint = {'center_x': 0.5, 'top': 1.0 - lista_layout_height}
             lista_layout.add_widget(label)
             lista_layout_height += 0.1  # Ajuste conforme necessário para o espaçamento entre os itens
@@ -352,11 +353,6 @@ class ListaDenunciaAssalto(FloatLayout):
 
         # Adicionar a ScrollView ao FloatLayout principal
         self.add_widget(scroll_view)
-
-
-    def setinha_voltar(self, instance):
-        setinha = ListaOcorrencias()
-        setinha.open()  
 
     def setinha_voltar(self, instance):
         setinha = ListaOcorrencias()
@@ -396,7 +392,7 @@ class ListaDenunciaAssedio(FloatLayout):
 
         # Adicionar cada item da lista
         for dado in dados:
-            label = Label(text=str(dado), font_size= 12, font_name= 'Arial', size_hint=(None, None), size=(self.width, 60))
+            label = Label(text=str(dado), font_size= 12, font_name= 'Arial', color=(0,0,0,1), size_hint=(None, None), size=(self.width, 60))
             label.pos_hint = {'center_x': 0.5, 'top': 1.0 - lista_layout_height}
             lista_layout.add_widget(label)
             lista_layout_height += 0.1  # Ajuste conforme necessário para o espaçamento entre os itens
